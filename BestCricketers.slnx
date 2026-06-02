@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="BestCricketers.API/BestCricketers.API.csproj" />
+  <Project Path="BestCricketers.Application/BestCricketers.Application.csproj" />
+  <Project Path="BestCricketers.Domain/BestCricketers.Domain.csproj" />
+  <Project Path="BestCricketers.Infrastructure/BestCricketers.Infrastructure.csproj" />
+</Solution>
