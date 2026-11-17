@@ -1,0 +1,27 @@
+name: Submit NuGet dependency graph
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Restore
+        run: dotnet restore BestCricketers.sln
+
+      - name: Detect and submit dependencies
+        uses: advanced-security/component-detection-dependency-submission-action@v0.1.4
+        with:
+          filePath: .
